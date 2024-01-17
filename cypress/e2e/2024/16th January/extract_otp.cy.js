@@ -1,6 +1,6 @@
 describe("Login HC", () => {
   it("Login to HC", () => {
-    cy.visit("https://uat.v2.viplatform.net/company/get-started"); // Visita la pagina de inicio del sitio
+    cy.visit("https://web.virtualinternships.com/company/get-started"); // Visita la pagina de inicio del sitio
     cy.wait(10000);
 
     //enter email
@@ -16,7 +16,7 @@ describe("Login HC", () => {
       "https://www.1secmail.com/api/v1/?action=getMessages&login=darshana_templatesmigration&domain=1secmail.org"
     ).then((response) => {
       expect(response.status).to.eq(200);
-      const emailid = response.body[0].id;
+      const emailid = response?.body?.[0]?.id;
       //   return emailid;
       console.log(emailid);
 
@@ -31,7 +31,7 @@ describe("Login HC", () => {
         //extract otp
         const htmlBody = response.body.textBody;
         console.log({ htmlBody });
-        const otpRegex = /(?<![-<#])\b\d{6}\b(?!>)/;
+        const otpRegex = /(?<![-<#])\b\d{6}\b(?!>)/gm;
         const match = htmlBody.match(otpRegex);
 
         if (match) {
@@ -47,7 +47,7 @@ describe("Login HC", () => {
         // expect(response.body).to.have.length(5)
       });
 
-      cy.wait(10000);
+      cy.wait(20000);
 
       //extract otp
       //   cy.request(
