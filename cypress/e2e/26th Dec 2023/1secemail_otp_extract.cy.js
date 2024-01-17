@@ -3,7 +3,7 @@ describe('VI Signup using OTP sent email', () =>{
         //visit VI and enter email
         cy.visit('https://uat.v2.viplatform.net/company/get-started');
         cy.wait(4000)
-        const randomEmail = Math.random().toString(4).substring((1,2)+"1secmail.org")
+        // const randomEmail = Math.random().toString(4).substring((1,2)+"1secmail.org")
         cy.get('.euiFormControlLayout__childrenWrapper').type('darshana_admin@1secmail.org')
         cy.get('button[type="button"] .eui-textTruncate').click()
         

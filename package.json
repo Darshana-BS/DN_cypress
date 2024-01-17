@@ -21,6 +21,7 @@
   "homepage": "https://github.com/Darshana-BS/DN_cypress#readme",
   "devDependencies": {
     "cypress": "^13.6.1",
-    "cypress-xpath": "^2.0.1"
+    "cypress-xpath": "^2.0.1",
+    "mailosaur": "^8.6.1"
   }
 }
