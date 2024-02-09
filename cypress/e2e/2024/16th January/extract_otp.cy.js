@@ -36,6 +36,7 @@ describe("Login HC", () => {
 
         if (match) {
           const otp = match[1];
+          console.log({ match });
           console.log("One-Time Password:", otp);
         } else {
           console.log("No OTP found in the HTML body.");
