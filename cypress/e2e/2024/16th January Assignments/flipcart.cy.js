@@ -20,17 +20,19 @@ describe('search product on flipcart', () => {
     cy.get('._2SmNnR .Pke_EE').type('Tata Tea premium')
     cy.get('._2iLD__[type="Submit"]').click()
     
-
+//read the names of the items/ products
     cy.get('.s1Q9rs').each(($el, index) => {
       var ItemList = []
     if(index<2){
-    // for (index = 0; index = 1; index++){
       cy.wrap($el).invoke('text').then((text) => {
       cy.log(`The name of the searched  product with index ${index} is: ${text}`);
-      // ItemList.push(`${text}`) //${index} - 
-      // cy.log(ItemList)
+//store it in the array
+      ItemList.push(`${text}`) //${index} - 
+      cy.log(ItemList)
+//dump results to the CSV file
+      cy.writeFile('cypress/fixtures/data.csv', `${ItemList}`)
     })
-      }    
+        }    
     })
   })
 })
