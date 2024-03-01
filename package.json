@@ -1,0 +1,39 @@
+{
+  "name": "dn_cypress",
+  "version": "1.0.0",
+  "description": "New cypress installed on 15th Dec 2023",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "pretest": "echo Inside Pretest",
+    "tests": "I am inside the test",
+    "posttest": "echo Outside posttest",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "merge-reports": "mochawesome-merge /cypress/report/* json ./report1.json",
+    "generate-htmlreport": "marge./report1. json --reportDir ./cypress/reports"
+  },
+  "keywords": [],
+  "author": "Darshana-BS",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Darshana-BS/DN_cypress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Darshana-BS/DN_cypress/issues"
+  },
+  "homepage": "https://github.com/Darshana-BS/DN_cypress#readme",
+  "devDependencies": {
+    "cypress": "^13.6.1",
+    "cypress-xpath": "^2.0.1",
+    "mailosaur": "^8.6.1",
+    "mocha": "^10.3.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0"
+  },
+  "dependencies": {
+    "mochawesome-report-generator": "^6.2.0",
+    "prompt-sync": "^4.2.0"
+  }
+}

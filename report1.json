@@ -1,0 +1,2029 @@
+{
+  "stats": {
+    "suites": 30,
+    "tests": 42,
+    "passes": 26,
+    "pending": 0,
+    "failures": 16,
+    "testsRegistered": 42,
+    "passPercent": 61.904761904761905,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-02-28T03:20:57.693Z",
+    "end": "2024-02-28T03:28:20.082Z",
+    "duration": 442389
+  },
+  "results": [
+    {
+      "uuid": "b0bad838-4130-4b52-905a-cadaaa4dfbaa",
+      "title": "",
+      "fullFile": "cypress/e2e/pageobjectmodel_login.cy.js",
+      "file": "cypress/e2e/pageobjectmodel_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Login test",
+          "fullTitle": "Login test",
+          "timedOut": null,
+          "duration": 1425,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "loginpage.VisitPage('https://trytestingthis.netlify.app/');\nloginpage.EnterUsername('test');\nloginpage.EnterPassword('test');\nloginpage.ClickSubmit();\nloginpage.VerfiyText();\nloginpage.VerifyLogin();",
+          "err": {},
+          "uuid": "4372c8d2-9071-40da-a6c5-348add56ff80",
+          "parentUUID": "b0bad838-4130-4b52-905a-cadaaa4dfbaa",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "4372c8d2-9071-40da-a6c5-348add56ff80"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 1425,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "58acd63a-89b9-4982-8809-ee23b7008abe",
+      "title": "",
+      "fullFile": "cypress/e2e/pageobjectmodel_orangehrms.cy.js",
+      "file": "cypress/e2e/pageobjectmodel_orangehrms.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "172a46c2-6bef-4b5c-9b04-4e411b2a6965",
+          "title": "Visit OrgangeHRMS",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign in using email and password",
+              "fullTitle": "Visit OrgangeHRMS Sign in using email and password",
+              "timedOut": null,
+              "duration": 14086,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');\ncy.get('input').filter('[name=\"username\"]').type('Admin');\ncy.get('input').filter('[type=\"password\"]').type('admin123');\ncy.get('button').filter('[type=\"submit\"]').click();\n//visit about\n// cy.get('.oxd-userdropdown-name').click\n//visit admin\ncy.get('a[href*=\"/viewAdminModule\"]').click();\ncy.get('.orangehrm-header-container [type=\"button\"]').click();\n//select the value of role from dropdown-\ncy.get('div .oxd-select-text').eq(0).click();\n// cy.get('.oxd-select-dropdown').type('Admin').type('{enter}')\ncy.contains('.oxd-select-option', 'Admin').click();\n//enter the employee name\ncy.get('.oxd-autocomplete-text-input').type('QA');\ncy.wait(2000);\ncy.get('.oxd-autocomplete-text-input').type('{downarrow}').type('{enter}');\n// cy.contains('.oxd-autocomplete-text-input .oxd-select-option').should('contain', \"QA\").click();\n//select value of Status from dropdown-\ncy.get('div .oxd-select-text').eq(1).type('{downarrow}{enter}').click();\n// cy.get('.oxd-select-dropdown')\n// cy.get('.oxd-autocomplete-dropdown')\n//cretae user\n// enetr username\ncy.get('input').filter('.oxd-input').eq(1).type('dash805');\n//enter password and confirm\ncy.get('div .oxd-input').eq(2).type('darshana12345');\ncy.get('div .oxd-input').eq(3).type('darshana12345');\n//cy.get('input').filter('[type=\"password\"]').eq(2).type('darshana12345')\n//cy.get('input').filter('[type=\"password\"]').eq(3).type('darshana12345')\n//submit user\ncy.get('button[type=\"submit\"]').click();\ncy.log('User created successfully with name dash805');\ncy.wait(2000);\n//search for added user\ncy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers');\ncy.get('div .oxd-input').eq(1).type('dash805');\ncy.get('div .oxd-select-text').eq(0).type('{downarrow}').click();\ncy.get('input').filter('[placeholder=\"Type for hints...\"]').type('QA');\ncy.wait(2000);\ncy.get('.oxd-autocomplete-text-input').type('{downarrow} {enter}').click();\ncy.get('div .oxd-select-text').eq(1).type('{downarrow}').click();\ncy.get('button[type=\"submit\"]').click();\n//validate the users list recived\ncy.wait(2000);\ncy.get('.oxd-table-cell').eq(1).contains('dash805');\ncy.log('User found');\n//edit username\ncy.get('div .oxd-table-cell').eq(0).click();\ncy.get('button').filter('[type=\"button\"]').eq(7).click();\ncy.get('.oxd-input').eq(1).clear().type('dash8051');\ncy.get('button[type=\"submit\"]').type('{enter}').click();\ncy.wait(2000);\n// //delete user by selecting checkbox\ncy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers');\ncy.get('div .oxd-input').eq(1).type('dash8051');\ncy.wait(2000);\ncy.get('div .oxd-select-text').eq(1).type('{downarrow}').click();\ncy.get('button[type=\"submit\"]').click();\ncy.get('div .oxd-table-cell').eq(0).click();\ncy.get('button').filter('[type=\"button\"]').eq(5).click();\ncy.get('button').filter('[type=\"button\"]').eq(9).click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Admin' within the selector: '.oxd-select-option' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Admin' within the selector: '.oxd-select-option' but never did.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/pageobjectmodel_orangehrms.cy.js:19:7)",
+                "diff": null
+              },
+              "uuid": "075fdbaa-761d-442b-869f-c338c556b233",
+              "parentUUID": "172a46c2-6bef-4b5c-9b04-4e411b2a6965",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "075fdbaa-761d-442b-869f-c338c556b233"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 14086,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "2f6d3bbb-e5b0-48d6-a5e1-945a205b7bcc",
+      "title": "",
+      "fullFile": "cypress/e2e/13th dec 2023/1_locators_get.cy.js",
+      "file": "cypress/e2e/13th dec 2023/1_locators_get.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "83d0a022-a343-4412-94ae-151fce2a80ee",
+          "title": "GET Method",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "get locators by id",
+              "fullTitle": "GET Method get locators by id",
+              "timedOut": null,
+              "duration": 1362,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//visit the website\ncy.visit('https://www.saucedemo.com/');\n//enter the username\ncy.get('#user-name').type('standard_user');\n//enter the password\ncy.get('#password').type('secret_sauce');\n//click login CTA\ncy.get('#login-button').click();",
+              "err": {},
+              "uuid": "bd382186-7645-4642-97d3-d34895734eee",
+              "parentUUID": "83d0a022-a343-4412-94ae-151fce2a80ee",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bd382186-7645-4642-97d3-d34895734eee"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1362,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "75e5639a-46c3-4f63-ad01-5fd59707d557",
+          "title": "GET Method",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get selectors by class",
+              "fullTitle": "GET Method Get selectors by class",
+              "timedOut": null,
+              "duration": 870,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//visit the website\ncy.visit('https://www.saucedemo.com/');\n//enter the username\ncy.get('.form_group').eq(0).type('standard_user');\n//enter the password\ncy.get('.form_group').eq(1).type('secret_sauce');\n//click submit\ncy.get('[data-test=\"login-button\"]').click();",
+              "err": {},
+              "uuid": "7f1807e8-3518-494d-89ee-1774f6ae587c",
+              "parentUUID": "75e5639a-46c3-4f63-ad01-5fd59707d557",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Equla|First|Last Method",
+              "fullTitle": "GET Method Equla|First|Last Method",
+              "timedOut": null,
+              "duration": 791,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\ncy.get('input').first().type('standard_user');\ncy.get('input').eq(1).type('secret_sauce');\ncy.get('input').last().click();",
+              "err": {},
+              "uuid": "e0119cbd-3230-4d0d-bfb1-177b6235ad10",
+              "parentUUID": "75e5639a-46c3-4f63-ad01-5fd59707d557",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Filter Method",
+              "fullTitle": "GET Method Filter Method",
+              "timedOut": null,
+              "duration": 865,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\ncy.get('input').filter('[type=\"text\"]').type('standard_user');\ncy.get('input').filter('[type=\"password\"]').type('secret_sauce');\ncy.get('input').filter('[type=\"submit\"]').click();",
+              "err": {},
+              "uuid": "457f4614-7bcc-475d-9b37-8b219e496adc",
+              "parentUUID": "75e5639a-46c3-4f63-ad01-5fd59707d557",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Find Method",
+              "fullTitle": "GET Method Find Method",
+              "timedOut": null,
+              "duration": 60243,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\ncy.get('form').find('input').eq(0).type('standard_user');\ncy.get('form').find('input').eq(1).type('secret_sauce');\ncy.get('form').find('input').last().click();\n// cy.get('form').within(()=>{\n//     cy.get('.form_group').eq(0).type('standard_user')\n// })",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:130429:64)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:131417:16)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4186:41)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/13th dec 2023/1_locators_get.cy.js:51:11)",
+                "diff": null
+              },
+              "uuid": "00c44a3d-e71b-40f4-bf84-d6246a93398d",
+              "parentUUID": "75e5639a-46c3-4f63-ad01-5fd59707d557",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Parent Method",
+              "fullTitle": "GET Method Parent Method",
+              "timedOut": null,
+              "duration": 60235,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\ncy.get('form').parent().should('have.class', 'login-box');",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:130429:64)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:131417:16)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4186:41)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/13th dec 2023/1_locators_get.cy.js:62:11)",
+                "diff": null
+              },
+              "uuid": "53b3c4ba-d6b1-449f-a5e0-12dad7de1891",
+              "parentUUID": "75e5639a-46c3-4f63-ad01-5fd59707d557",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7f1807e8-3518-494d-89ee-1774f6ae587c",
+            "e0119cbd-3230-4d0d-bfb1-177b6235ad10",
+            "457f4614-7bcc-475d-9b37-8b219e496adc"
+          ],
+          "failures": [
+            "00c44a3d-e71b-40f4-bf84-d6246a93398d",
+            "53b3c4ba-d6b1-449f-a5e0-12dad7de1891"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 123004,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "47233455-e3f2-4f5a-8bc3-29c9c62c4b29",
+      "title": "",
+      "fullFile": "cypress/e2e/13th dec 2023/2_rough.cy.js",
+      "file": "cypress/e2e/13th dec 2023/2_rough.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9d9b82a3-e213-4a4d-8c99-43d99be3c168",
+          "title": "Get locators by Name",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get locators by Name",
+              "fullTitle": "Get locators by Name Get locators by Name",
+              "timedOut": null,
+              "duration": 5143,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//visit the website\ncy.visit('https://www.saucedemo.com/');\n//enter the username\ncy.get('.form_group').eq(0).type('standard_user');\n//enter the password\ncy.get('.form_group').eq(1).type('secret_sauce');\n//click submit\ncy.get('.form_group[data-test=\"login-button\"]').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.form_group[data-test=\"login-button\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.form_group[data-test=\"login-button\"]`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/13th dec 2023/2_rough.cy.js:26:8)",
+                "diff": null
+              },
+              "uuid": "10f6ca15-2275-4ed5-9798-7885a3d1db07",
+              "parentUUID": "9d9b82a3-e213-4a4d-8c99-43d99be3c168",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "10f6ca15-2275-4ed5-9798-7885a3d1db07"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5143,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "8446fd6f-fa1f-4668-a49b-b4e4b28a1b5b",
+      "title": "",
+      "fullFile": "cypress/e2e/13th dec 2023/3_herokuapp.cy.js",
+      "file": "cypress/e2e/13th dec 2023/3_herokuapp.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a5355b5-05e1-4709-bae2-5cc0afebd24d",
+          "title": "Herokeapp login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login flow with correct credentials",
+              "fullTitle": "Herokeapp login Login flow with correct credentials",
+              "timedOut": null,
+              "duration": 3522,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://the-internet.herokuapp.com/login'); // Visits the website on the page specified in the URL\ncy.get('input[type=\"text\"]').type('tomsmith');\ncy.get('.large-6 > input#password').type('SuperSecretPassword!');\ncy.get('.radius').click();\ncy.get('div > #flash-messages').contains('logged');\ncy.log('Success');",
+              "err": {},
+              "uuid": "21feb5cb-0bd5-46a8-969a-ea88e184a7a2",
+              "parentUUID": "6a5355b5-05e1-4709-bae2-5cc0afebd24d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "21feb5cb-0bd5-46a8-969a-ea88e184a7a2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3522,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "1f86847a-22ad-42c5-910f-b63069ee6f5c",
+      "title": "",
+      "fullFile": "cypress/e2e/14th dec 2023/login_suasdemo.cy.js",
+      "file": "cypress/e2e/14th dec 2023/login_suasdemo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4d54f537-d221-404f-86f3-ee0dcb0e70f8",
+          "title": "Login using username and password",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "login steps",
+              "fullTitle": "Login using username and password login steps",
+              "timedOut": null,
+              "duration": 974,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');\ncy.get('div .form_group #user-name').type(username);\ncy.get('.form_group').eq(1).type(password);\ncy.get('.submit-button').click();",
+              "err": {},
+              "uuid": "04d85181-56a9-453d-bbb2-5571cef4e20e",
+              "parentUUID": "4d54f537-d221-404f-86f3-ee0dcb0e70f8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04d85181-56a9-453d-bbb2-5571cef4e20e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 974,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9a518f6d-6c76-4017-819f-f37fc0ee5de4",
+      "title": "",
+      "fullFile": "cypress/e2e/15th Dec 2023/1_login_username_password_suasdemo.cy.js",
+      "file": "cypress/e2e/15th Dec 2023/1_login_username_password_suasdemo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9f1f6b4c-cc7c-4202-93c9-fed4ed72900e",
+          "title": "login using username and Password",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "enter username",
+              "fullTitle": "login using username and Password enter username",
+              "timedOut": null,
+              "duration": 10473,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com');\n// cy.getCookies().should('not.be.empty')\n// cy.clearCookies()\n// cy.getCookies().should('be.empty')\ncy.wait(10000);\ncy.get('input#user-name').type('username');",
+              "err": {},
+              "uuid": "b14a25f4-f140-4d44-8810-bf5303a263fa",
+              "parentUUID": "9f1f6b4c-cc7c-4202-93c9-fed4ed72900e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b14a25f4-f140-4d44-8810-bf5303a263fa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10473,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "55a82107-9f15-4854-a9fc-34a92d5e665b",
+      "title": "",
+      "fullFile": "cypress/e2e/15th Dec 2023/3_button.cy.js",
+      "file": "cypress/e2e/15th Dec 2023/3_button.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3821c267-b190-4411-9846-66e5bf140d15",
+          "title": "login using username and Password",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "youtube search",
+              "fullTitle": "login using username and Password youtube search",
+              "timedOut": null,
+              "duration": 5354,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Visit the google and search\ncy.visit('https://www.google.com');\ncy.get('textarea[jsname=\"yZiJbe\"]').type('Javscript by Testers talk');\ncy.get('div .FPdoLc .gNO89b').click();\n//click on search icon\ncy.visit('https://www.google.com/search?q=javascript+by+testers+talk');\n//whole name\ncy.get('button[type=\"submit\"]').click();\n//starts with\ncy.get('button[type^=\"sub\"]').click();\n//ends with\ncy.get('button[type$=\"mit\"]').click();\n//contains with CSS\ncy.get('button[type*=\"mi\"]').click();\n//contains Cypress\ncy.contains('Testers Talk').click();\n//click on the video\ncy.visit('https://www.youtube.com/@testerstalk');\ncy.get('.yt-tab-shape-wiz__tab').eq(2).click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[jsname=\"yZiJbe\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[jsname=\"yZiJbe\"]`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/15th Dec 2023/3_button.cy.js:5:11)",
+                "diff": null
+              },
+              "uuid": "da200ab2-91b0-4f1f-8253-0b6ea17b2bc9",
+              "parentUUID": "3821c267-b190-4411-9846-66e5bf140d15",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "da200ab2-91b0-4f1f-8253-0b6ea17b2bc9"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5354,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "36268f9d-b28d-4a0e-9ec6-91307981876a",
+      "title": "",
+      "fullFile": "cypress/e2e/15th Dec 2023/4_XPATH.cy.js",
+      "file": "cypress/e2e/15th Dec 2023/4_XPATH.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "611b99a2-b449-428f-a4be-cd9088415dde",
+          "title": "XPATH",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "xpath new",
+              "fullTitle": "XPATH xpath new",
+              "timedOut": null,
+              "duration": 5956,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com/search?q=javascript+by+testers+talk');\ncy.xpath('//*[@type=\"search\"]').clear().type('Day Dreamer');\ncy.xpath('//*[@jsname=\"Tg7LZd\"]').click();\n// cy.get('a[href*=\"CAQQBA\"]').click()\n//javascript\ncy.get('a[href*=vid]').click();\n//daydreamer\n// cy.get('.hdtb-mitem:nth-child(3) > a').click()\n// cy.xpath('//*[text()=\"videos\"]').click()",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@type=\"search\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//*[@type=\"search\"]`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/15th Dec 2023/4_XPATH.cy.js:4:11)",
+                "diff": null
+              },
+              "uuid": "53b4d6f6-7798-4702-9f1d-9a7c5baf14e1",
+              "parentUUID": "611b99a2-b449-428f-a4be-cd9088415dde",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "53b4d6f6-7798-4702-9f1d-9a7c5baf14e1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5956,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "a5f42a23-92ff-4808-bb6b-4e539a50c35d",
+      "title": "",
+      "fullFile": "cypress/e2e/15th Dec 2023/test_file.cy.js",
+      "file": "cypress/e2e/15th Dec 2023/test_file.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f7da29f9-db15-4aa1-898e-480227c12e5f",
+          "title": "template spec",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "passes",
+              "fullTitle": "template spec passes",
+              "timedOut": null,
+              "duration": 209,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.saucedemo.com/');",
+              "err": {},
+              "uuid": "d5c4f26e-ad74-4327-a9fa-f4fdd5c8a0e7",
+              "parentUUID": "f7da29f9-db15-4aa1-898e-480227c12e5f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d5c4f26e-ad74-4327-a9fa-f4fdd5c8a0e7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 209,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "961d4156-ab2a-43fd-9b2a-1e6ddd48f2df",
+      "title": "",
+      "fullFile": "cypress/e2e/26th Dec 2023/1secemail_otp_extract.cy.js",
+      "file": "cypress/e2e/26th Dec 2023/1secemail_otp_extract.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9aff981f-9e88-48e8-a4d1-9774809f2fcb",
+          "title": "VI Signup using OTP sent email",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign up to HC VI account",
+              "fullTitle": "VI Signup using OTP sent email Sign up to HC VI account",
+              "timedOut": null,
+              "duration": 10203,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//visit VI and enter email\ncy.visit('https://uat.v2.viplatform.net/company/get-started');\ncy.wait(4000);\n// const randomEmail = Math.random().toString(4).substring((1,2)+\"1secmail.org\")\ncy.get('.euiFormControlLayout__childrenWrapper').type('darshana_admin@1secmail.org');\ncy.get('button[type=\"button\"] .eui-textTruncate').click();\n//extract OTP\n//open in new tab\n//     it('check the otp in emails for the 1secMail', ()=>{\n//         cy.visit('https://www.1secmail.com/');\n//         cy.get('#login').clear().type('darshana_admin')\n//         //select value of domain from drop-down\n//         cy.get('#domain')\n//         .select('1secmail.org')\n//         .invoke(\"val\").should(\"eq\", \"1secmail.org\")\n//         //submit\n//         cy.get('button[type=\"submit\"]').click(); \n//         //implisit wait\n//         cy.wait(1000)\n//         //click the email sent\n//         cy.get('div #content').click()    \n//         //check the email\n//         cy.get('.messagedetails1').should(\"have.text\", \"Message details\")\n// })",
+              "err": {},
+              "uuid": "ca993540-50dd-46fb-8312-6b1abf79d53c",
+              "parentUUID": "9aff981f-9e88-48e8-a4d1-9774809f2fcb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ca993540-50dd-46fb-8312-6b1abf79d53c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10203,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "7de90664-057f-4a9d-a760-3f5ff03e9234",
+      "title": "",
+      "fullFile": "cypress/e2e/26th Dec 2023/gmail_login.cy.js",
+      "file": "cypress/e2e/26th Dec 2023/gmail_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0ec11cdd-0474-4051-8785-8131d76d86bc",
+          "title": "Gmail login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Gmail login using password",
+              "fullTitle": "Gmail login Gmail login using password",
+              "timedOut": null,
+              "duration": 6208,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://gmail.com');\ncy.get('div [type=\"email\"]').type('darshana.nehulkar@cumminscollege.in');\ncy.get('.F9NWFb .VfPpkd-LgbsSe').click();\ncy.get('input[tyep=\"password\"]').type('neverlove805');\ncy.get('.F9NWFb .VfPpkd-LgbsSe').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.F9NWFb .VfPpkd-LgbsSe`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.F9NWFb .VfPpkd-LgbsSe`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/26th Dec 2023/gmail_login.cy.js:5:7)",
+                "diff": null
+              },
+              "uuid": "cf9545b7-70c6-45c7-9ff8-0ea66902628c",
+              "parentUUID": "0ec11cdd-0474-4051-8785-8131d76d86bc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cf9545b7-70c6-45c7-9ff8-0ea66902628c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6208,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "dcf70cfd-2b27-483f-a19b-17a3878204d6",
+      "title": "",
+      "fullFile": "cypress/e2e/27th Dec 2023/1_cypress_api_GET.cy.js",
+      "file": "cypress/e2e/27th Dec 2023/1_cypress_api_GET.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e820b059-614b-4546-87d6-f1f6f3e62043",
+          "title": "GET request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get details about the products",
+              "fullTitle": "GET request Get details about the products",
+              "timedOut": null,
+              "duration": 693,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"GET\", \"https://www.bstackdemo.com/api/products\").should(response => {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "f5f189f8-f1ee-43c3-b5bd-7d0ff793b9ae",
+              "parentUUID": "e820b059-614b-4546-87d6-f1f6f3e62043",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f5f189f8-f1ee-43c3-b5bd-7d0ff793b9ae"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 693,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "db3715b0-086a-4fb2-8831-f4ab5c8b3cb5",
+      "title": "",
+      "fullFile": "cypress/e2e/27th Dec 2023/2_cypress_api_POST.cy.js",
+      "file": "cypress/e2e/27th Dec 2023/2_cypress_api_POST.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "980295a0-61af-4672-8689-fbb3d92e0bbb",
+          "title": "POST request",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "POST request create new valueordata",
+              "fullTitle": "POST request POST request create new valueordata",
+              "timedOut": null,
+              "duration": 1294,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request(\"POST\", \"https://dummy.restapiexample.com/api/v1/create\", {\n  name: \"John Doe\",\n  salary: \"1234567\",\n  age: \"23\"\n}).should(response => {\n  expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "6e4fb6d3-b786-499e-a883-4813f83a8d2f",
+              "parentUUID": "980295a0-61af-4672-8689-fbb3d92e0bbb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6e4fb6d3-b786-499e-a883-4813f83a8d2f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1294,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f6e600be-82c4-4227-a6c3-e48aa08625cb",
+      "title": "",
+      "fullFile": "cypress/e2e/_13th dec/Dn_selectors.cy.js",
+      "file": "cypress/e2e/_13th dec/Dn_selectors.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2480b9e1-805d-4e12-b6cd-b57574700cf9",
+          "title": "Cypress selector suit",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CYpress selector test1 = ATTRIBUTE",
+              "fullTitle": "Cypress selector suit CYpress selector test1 = ATTRIBUTE",
+              "timedOut": null,
+              "duration": 5543,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com/search?q=javascript+by+testers+talk');\ncy.get('textarea[type= \"search\"]').then(element => {\n  cy.log(\"Google text 1: \" + element.text());\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[type= \"search\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[type= \"search\"]`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/_13th dec/Dn_selectors.cy.js:4:11)",
+                "diff": null
+              },
+              "uuid": "02b08a56-f615-48d4-bb6b-8ae4906cf47b",
+              "parentUUID": "2480b9e1-805d-4e12-b6cd-b57574700cf9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Selector second = ID",
+              "fullTitle": "Cypress selector suit Selector second = ID",
+              "timedOut": null,
+              "duration": 541,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com/search?q=javascript+by+testers+talk');\ncy.get('#APjFqb').then(element => {\n  cy.log('Google text 2: ' + element.text());\n});",
+              "err": {},
+              "uuid": "d80bdeee-79f3-4c1b-ae8d-0809435bab57",
+              "parentUUID": "2480b9e1-805d-4e12-b6cd-b57574700cf9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Selector three= CLASS FIRST",
+              "fullTitle": "Cypress selector suit Selector three= CLASS FIRST",
+              "timedOut": null,
+              "duration": 11,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('.MUFPAc > :nth-child(2) > a').first().click()",
+              "err": {},
+              "uuid": "e7ad83c6-74d1-4d2a-a6cb-1f4e6867baba",
+              "parentUUID": "2480b9e1-805d-4e12-b6cd-b57574700cf9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Selector four = CLASS LAST",
+              "fullTitle": "Cypress selector suit Selector four = CLASS LAST",
+              "timedOut": null,
+              "duration": 4723,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com/search?q=javascript+by+testers+talk');\ncy.get('.MUFPAc > :nth-child(4) > a').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.MUFPAc > :nth-child(4) > a`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.MUFPAc > :nth-child(4) > a`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/_13th dec/Dn_selectors.cy.js:25:11)",
+                "diff": null
+              },
+              "uuid": "bb12de29-f514-4e33-b0e0-322acb482798",
+              "parentUUID": "2480b9e1-805d-4e12-b6cd-b57574700cf9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Index Selector",
+              "fullTitle": "Cypress selector suit Index Selector",
+              "timedOut": null,
+              "duration": 2842,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com/search?q=javascript+by+testers+talk');\n// cy.get('.IUOThf > a').eq(1).click()\n// cy.get('.MUFPAc > :nth-child(2) > a')\ncy.get('a[href*=\"vid&s\"]').click();\n// cy.get('div.MUFPAc a]').click()\n// cy.get('div.MUFPAc a.nth-child(1)').click()",
+              "err": {},
+              "uuid": "b07145d4-41fa-438c-8ff4-ba0b2c3e9012",
+              "parentUUID": "2480b9e1-805d-4e12-b6cd-b57574700cf9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d80bdeee-79f3-4c1b-ae8d-0809435bab57",
+            "e7ad83c6-74d1-4d2a-a6cb-1f4e6867baba",
+            "b07145d4-41fa-438c-8ff4-ba0b2c3e9012"
+          ],
+          "failures": [
+            "02b08a56-f615-48d4-bb6b-8ae4906cf47b",
+            "bb12de29-f514-4e33-b0e0-322acb482798"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13660,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0283131f-50d0-49bb-bc50-bf3037faedcb",
+      "title": "",
+      "fullFile": "cypress/e2e/_13th dec/FirstCypressTest.cy.js",
+      "file": "cypress/e2e/_13th dec/FirstCypressTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "82391532-3172-4fd4-8c79-ebaae7350db7",
+          "title": "Test Suite1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First Test",
+              "fullTitle": "Test Suite1 My First Test",
+              "timedOut": null,
+              "duration": 6225,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(\"Test 1 started \");\ncy.visit('https://www.youtube.com/');\ncy.log(\"Navigate to youtube\");\ncy.get('input[id=\"search\"]').type(\"DayDreamer in Hindi\");\ncy.get('button[id=\"search-icon-legacy\"] > yt-icon').click();\ncy.log(\"Test 1 is Complted\");",
+              "err": {},
+              "uuid": "deec1562-5faa-4191-905a-fbfe49c9adaf",
+              "parentUUID": "82391532-3172-4fd4-8c79-ebaae7350db7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "My Second Test",
+              "fullTitle": "Test Suite1 My Second Test",
+              "timedOut": null,
+              "duration": 2871,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log(\"Test 2 started \");\ncy.visit('https://www.youtube.com/');\ncy.log(\"Navigatec to youtube\");\ncy.get('input[id=\"search\"]').type(\"DayDreamer in Hindi\");\ncy.get('button[id=\"search-icon-legacy\"] > yt-icon').click();\ncy.log(\"Test 1 is Complted\");\ncy.log(\"test log\");",
+              "err": {},
+              "uuid": "7d34c153-4808-4e3e-bd7c-c08589430297",
+              "parentUUID": "82391532-3172-4fd4-8c79-ebaae7350db7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "deec1562-5faa-4191-905a-fbfe49c9adaf",
+            "7d34c153-4808-4e3e-bd7c-c08589430297"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9096,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "dfc2b8c9-d62c-4d54-b9d1-ebb42db7d304",
+      "title": "",
+      "fullFile": "cypress/e2e/_13th dec/Selectors_attribite.cy.js",
+      "file": "cypress/e2e/_13th dec/Selectors_attribite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "2nd attribute",
+          "fullTitle": "2nd attribute",
+          "timedOut": null,
+          "duration": 1948,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('http://google.com/search?q=Darshana+Nehulkar');\ncy.get('#APjFqb').then(element => {\n  cy.log(\"The text:\" + element.text());\n});",
+          "err": {},
+          "uuid": "d671657a-da90-4e70-9586-ff8f6c9abdce",
+          "parentUUID": "dfc2b8c9-d62c-4d54-b9d1-ebb42db7d304",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [
+        {
+          "uuid": "da2ca216-d7af-4f7d-9c52-1093251df407",
+          "title": "Attributes Fist",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "1st attribute",
+              "fullTitle": "Attributes Fist 1st attribute",
+              "timedOut": null,
+              "duration": 6103,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://google.com/search?q=Darshana+Nehulkar');\ncy.get('textarea[type=\"search\"]').then(element => {\n  cy.log(\"The text:\" + element.text());\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[type=\"search\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[type=\"search\"]`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/_13th dec/Selectors_attribite.cy.js:4:11)",
+                "diff": null
+              },
+              "uuid": "8c9b7703-5d3f-4ce5-9798-a3ca3c3d47ff",
+              "parentUUID": "da2ca216-d7af-4f7d-9c52-1093251df407",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8c9b7703-5d3f-4ce5-9798-a3ca3c3d47ff"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6103,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [
+        "d671657a-da90-4e70-9586-ff8f6c9abdce"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 1948,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0762922b-10ff-4d67-83f6-e091bfd06057",
+      "title": "",
+      "fullFile": "cypress/e2e/_13th dec/assertion_second.cy.js",
+      "file": "cypress/e2e/_13th dec/assertion_second.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4f3fada0-cc84-4d1d-adf5-5cc362b9ee54",
+          "title": "Second way of assertioning cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Second type",
+              "fullTitle": "Second way of assertioning cypress Second type",
+              "timedOut": null,
+              "duration": 5831,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com/search?q=Darshana+Nehulkar');\ncy.log('1st = have.text');\ncy.get('textarea[type=\"search\"]').should(\"have.text\", \"Darshana Nehulkar\");\ncy.log('2nd = contains');\ncy.get('textarea[type=\"search\"]').should(\"contain\", \"Darshana Nehulkar\");\ncy.log('3rd = be.visible');\ncy.get('textarea[type=\"search\"]').should(\"be.visible\");\ncy.log('4th = have.html');\ncy.get('textarea[type=\"search\"]').should(\"have.html\", \"Darshana Nehulkar\");\ncy.log('5th = have.html');\ncy.get('textarea[type=\"search\"]').should(\"have.html\", \"Darshana Nehulkar\").and(\"have.attr\", \"value\");\ncy.log('6th = have.attr and include');\ncy.get('textarea[type=\"search\"]').should(\"have.html\", \"Darshana Nehulkar\").and(\"have.attr\", \"value\").and(\"include\", \"Darshana Nehulkar\");\ncy.log('8th = have.length');\ncy.get('textarea[type=\"search\"]').then(element => {\n  expect(element.text()).to.have.length(\"17\");\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[type=\"search\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[type=\"search\"]`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/_13th dec/assertion_second.cy.js:6:42)",
+                "diff": null
+              },
+              "uuid": "6570819c-9862-471f-9122-69d1bc74a353",
+              "parentUUID": "4f3fada0-cc84-4d1d-adf5-5cc362b9ee54",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "6570819c-9862-471f-9122-69d1bc74a353"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5831,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "114da8a6-6c1b-43d4-b8e7-f6326f754de2",
+      "title": "",
+      "fullFile": "cypress/e2e/_13th dec/assertions_test.cy.js",
+      "file": "cypress/e2e/_13th dec/assertions_test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9793d406-ec39-4fc6-95a9-81d0963b7a94",
+          "title": "First test with assertion",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cypress equal assertion done",
+              "fullTitle": "First test with assertion Cypress equal assertion done",
+              "timedOut": null,
+              "duration": 5858,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.google.com/search?q=Darshana+Nehulkar\");\ncy.get('textarea[type=\"search\"]').then(variable => {\n  expect(variable.text()).to.equal(\"Darshana Nehulkar\");\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[type=\"search\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `textarea[type=\"search\"]`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/_13th dec/assertions_test.cy.js:18:7)",
+                "diff": null
+              },
+              "uuid": "886c5594-d34d-42e0-b6e9-dd112baa2f49",
+              "parentUUID": "9793d406-ec39-4fc6-95a9-81d0963b7a94",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "886c5594-d34d-42e0-b6e9-dd112baa2f49"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5858,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "41e47c35-f00f-47e0-9230-d6f0dd193643",
+      "title": "",
+      "fullFile": "cypress/e2e/2024/16th January Assignments/extract_otp.cy.js",
+      "file": "cypress/e2e/2024/16th January Assignments/extract_otp.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e9139cb9-1e8f-4025-a47d-a27d206956c6",
+          "title": "Login HC",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login to HC",
+              "fullTitle": "Login HC Login to HC",
+              "timedOut": null,
+              "duration": 38303,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://web.virtualinternships.com/company/get-started\"); // Visita la pagina de inicio del sitio\ncy.wait(10000);\n//enter email\ncy.get(\".euiFormControlLayout__childrenWrapper\").type(\"darshana_templatesmigration@1secmail.org\");\ncy.get(\".eui-textTruncate\").click();\ncy.wait(4000);\n//checking all emails inbox\ncy.request(\"GET\", \"https://www.1secmail.com/api/v1/?action=getMessages&login=darshana_templatesmigration&domain=1secmail.org\").then(response => {\n  var _response$body;\n  expect(response.status).to.eq(200);\n  const emailid = response === null || response === void 0 || (_response$body = response.body) === null || _response$body === void 0 || (_response$body = _response$body[0]) === null || _response$body === void 0 ? void 0 : _response$body.id;\n  //   return emailid;\n  console.log(emailid);\n  //fetching single message\n  cy.request(\"GET\", `https://www.1secmail.com/api/v1/?action=readMessage&login=darshana_templatesmigration&domain=1secmail.org&id=${emailid}`).then(response => {\n    expect(response.status).to.eq(200);\n    console.log({\n      response\n    });\n    //extract otp\n    const htmlBody = response.body.textBody;\n    console.log({\n      htmlBody\n    });\n    const otpRegex = /(?<![-<#])\\b\\d{6}\\b(?!>)/gm;\n    const match = htmlBody.match(otpRegex);\n    if (match) {\n      const otp = match[1];\n      console.log({\n        match\n      });\n      console.log(\"One-Time Password:\", otp);\n    } else {\n      console.log(\"No OTP found in the HTML body.\");\n    }\n    //====\n    // const emailnumber = response.body[0]\n    // expect(response.body).to.have.length(5)\n  });\n  cy.wait(20000);\n  //extract otp\n  //   cy.request(\n  //     `https://www.1secmail.com/api/v1/?action=readMessage&login=darshana_templatesmigration&domain=1secmail.org&id=${emailid}`\n  //   ).then((html) => {\n  //     const otpLine = html.body.match(/.*Here's your OTP.*/);\n  //     console.log(otpLine);\n  //   });\n});\n//   .then((emailid) => {",
+              "err": {},
+              "uuid": "6eaa73b9-c6e5-4aa0-905d-dfe30bc7eb69",
+              "parentUUID": "e9139cb9-1e8f-4025-a47d-a27d206956c6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6eaa73b9-c6e5-4aa0-905d-dfe30bc7eb69"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 38303,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "37ff2230-bdcb-4690-b9ec-0b554bc72af0",
+      "title": "",
+      "fullFile": "cypress/e2e/2024/16th January Assignments/flipcart.cy.js",
+      "file": "cypress/e2e/2024/16th January Assignments/flipcart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1fe371f7-944d-4e55-8208-7e0ee57f2a34",
+          "title": "search product on flipcart",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign in using email and password",
+              "fullTitle": "search product on flipcart Sign in using email and password",
+              "timedOut": null,
+              "duration": 12349,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.flipkart.com/\");\ncy.get('._2SmNnR .Pke_EE').type('Tata Tea premium');\ncy.get('._2iLD__[type=\"Submit\"]').click();\n//read the names of the items/ products\ncy.get('.s1Q9rs').each(($el, index) => {\n  var ItemList = [];\n  if (index < 2) {\n    cy.wrap($el).invoke('text').then(text => {\n      cy.log(`The name of the searched  product with index ${index} is: ${text}`);\n      //store it in the array\n      ItemList.push(`${text}`); //${index} - \n      cy.log(ItemList);\n      //dump results to the CSV file\n      cy.writeFile('cypress/fixtures/data.csv', `${ItemList}`);\n    });\n  }\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.s1Q9rs`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.s1Q9rs`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/2024/16th January Assignments/flipcart.cy.js:24:7)",
+                "diff": null
+              },
+              "uuid": "853aa03f-2d78-4db5-ab72-75a958b28edd",
+              "parentUUID": "1fe371f7-944d-4e55-8208-7e0ee57f2a34",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "853aa03f-2d78-4db5-ab72-75a958b28edd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12349,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9eacbe4a-1e61-4b44-a5ad-ab029bacdb1e",
+      "title": "",
+      "fullFile": "cypress/e2e/2024/16th January Assignments/otp2.cy.js",
+      "file": "cypress/e2e/2024/16th January Assignments/otp2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "99d6a7f2-acd9-4bac-85e8-35ed9b00263c",
+          "title": "Login HC",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login to HC",
+              "fullTitle": "Login HC Login to HC",
+              "timedOut": null,
+              "duration": 11189,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://uat.v2.viplatform.net/company/get-started\"); // Visita la pagina de inicio del sitio\ncy.wait(5000);\n//enter email\ncy.get(\".euiFormControlLayout__childrenWrapper\").type(\"darshana_templatesmigration@1secmail.org\");\ncy.get(\".eui-textTruncate\").click();\ncy.wait(4000);\n//checking all emails inbox\ncy.request(\"GET\", \"https://www.1secmail.com/api/v1/?action=getMessages&login=darshana_templatesmigration&domain=1secmail.org\").then(response => {\n  expect(response.status).to.eq(200);\n  const emailid = response.body[0].id;\n  return emailid;\n  console.log(emailid);\n  //fetching single message\n  cy.request(\"GET\", `https://www.1secmail.com/api/v1/?action=readMessage&login=darshana_templatesmigration&domain=1secmail.org&id=${emailid}`).then(response => {\n    expect(response.status).to.eq(200);\n    // const emailnumber = response.body[0]\n    // expect(response.body).to.have.length(5)\n  });\n  cy.wait(10000);\n  //extract otp\n  //   cy.request(\n  //     `https://www.1secmail.com/api/v1/?action=readMessage&login=darshana_templatesmigration&domain=1secmail.org&id=${emailid}`\n  //   ).then((html) => {\n  //     const otpLine = html.body.match(/.*Here's your OTP.*/);\n  //     console.log(otpLine);\n  //   });\n});\n//   .then((emailid) => {",
+              "err": {},
+              "uuid": "7084bbdd-dff6-46a2-912a-85edac1aabde",
+              "parentUUID": "99d6a7f2-acd9-4bac-85e8-35ed9b00263c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7084bbdd-dff6-46a2-912a-85edac1aabde"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11189,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "63f74691-7fa4-4d9c-8600-c5c0cf4fc48c",
+      "title": "",
+      "fullFile": "cypress/e2e/2024/16th January Assignments/otp3.cy.js",
+      "file": "cypress/e2e/2024/16th January Assignments/otp3.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "510e7e8c-182a-48c9-9a4e-e91cca564735",
+          "title": "Login HC",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login to HC",
+              "fullTitle": "Login HC Login to HC",
+              "timedOut": null,
+              "duration": 16803,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://uat.v2.viplatform.net/company/get-started\"); // Visita la pagina de inicio del sitio\ncy.wait(10000);\n//enter email\ncy.get(\".euiFormControlLayout__childrenWrapper\").type(\"darshana_templatesmigration@1secmail.org\");\ncy.get(\".eui-textTruncate\").click();\ncy.wait(4000);\n//checking the emails inbox\ncy.request(\"GET\", \"https://www.1secmail.com/api/v1/?action=getMessages&login=darshana_templatesmigration&domain=1secmail.org\").then(response => {\n  expect(response.status).to.eq(200);\n  const emailid = response.body[0].id;\n  console.log(emailid);\n  //fetching single email\n  cy.request(\"GET\", `https://www.1secmail.com/api/v1/?action=readMessage&login=darshana_templatesmigration&domain=1secmail.org&id=${emailid}`).then(response => {\n    expect(response.status).to.eq(200);\n    console.log({\n      response\n    });\n    // var body = JSON.parse(response.body);\n    // cy.wrap(response.body).as(\"EmailBody\");\n    // }).should(() => {\n    //     cy.get(\"@EmailBody\")\n    //     .its(\"subject\")\n    //     .should(\"include\", \"Please verify your account\");\n    //     })\n    //extract OTP from the email\n    const otpLine = response.body.textBody.match(/\\\\n\\\\n\\d+\\\\n\\\\n/);\n    console.log(otpLine);\n  });\n});",
+              "err": {},
+              "uuid": "13b94eef-2230-46c8-aa80-1634168bc4dd",
+              "parentUUID": "510e7e8c-182a-48c9-9a4e-e91cca564735",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "13b94eef-2230-46c8-aa80-1634168bc4dd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16803,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "5c79ff05-b052-45ce-80a5-e8d16251819f",
+      "title": "",
+      "fullFile": "cypress/e2e/2024/16th January Assignments/temprun.cy.js",
+      "file": "cypress/e2e/2024/16th January Assignments/temprun.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "An uncaught error was detected outside of a test",
+          "fullTitle": "An uncaught error was detected outside of a test",
+          "timedOut": null,
+          "duration": 221,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "throw err;",
+          "err": {
+            "message": "CypressError: The following error originated from your test code, not from Cypress.\n\n  > Cannot call `cy.contains()` outside a running test.\n\nThis usually happens when you accidentally write commands outside an `it(...)` test.\n\nIf that is the case, just move these commands inside an `it(...)` test.\n\nCheck your test file for errors.\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n\nhttps://on.cypress.io/cannot-execute-commands-outside-test",
+            "estack": "CypressError: The following error originated from your test code, not from Cypress.\n\n  > Cannot call `cy.contains()` outside a running test.\n\nThis usually happens when you accidentally write commands outside an `it(...)` test.\n\nIf that is the case, just move these commands inside an `it(...)` test.\n\nCheck your test file for errors.\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n\nhttps://on.cypress.io/cannot-execute-commands-outside-test\n    at ensureRunnable (http://localhost:63407/__cypress/runner/cypress_runner.js:138262:58)\n    at cy.<computed> [as contains] (http://localhost:63407/__cypress/runner/cypress_runner.js:138837:7)\n    at <unknown> (http://localhost:63407/__cypress/runner/cypress_runner.js:110821:23)\n    at tryCatcher (http://localhost:63407/__cypress/runner/cypress_runner.js:1807:23)\n    at Object.gotValue (http://localhost:63407/__cypress/runner/cypress_runner.js:6476:18)\n    at Object.gotAccum (http://localhost:63407/__cypress/runner/cypress_runner.js:6465:25)\n    at Object.tryCatcher (http://localhost:63407/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:63407/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:63407/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:63407/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:63407/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:63407/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:63407/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:63407/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:63407/__cypress/runner/cypress_runner.js:2286:14)",
+            "diff": null
+          },
+          "uuid": "b57b2669-b7b3-4450-9bdc-66d50404afe3",
+          "parentUUID": "5c79ff05-b052-45ce-80a5-e8d16251819f",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "b57b2669-b7b3-4450-9bdc-66d50404afe3"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 221,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "035bf96a-4dc2-4629-895a-d776487e2137",
+      "title": "",
+      "fullFile": "cypress/e2e/Javascript_2024/2_seach_user.cy.js",
+      "file": "cypress/e2e/Javascript_2024/2_seach_user.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c2c1124e-98f6-4d92-8903-6285f9a00785",
+          "title": "Visit OrgangeHRMS",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Sign in using email and password",
+              "fullTitle": "Visit OrgangeHRMS Sign in using email and password",
+              "timedOut": null,
+              "duration": 21688,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');\ncy.get('input').filter('[name=\"username\"]').type('Admin');\ncy.get('input').filter('[type=\"password\"]').type('admin123');\ncy.get('button').filter('[type=\"submit\"]').click();\n//search for added user\ncy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers');\ncy.get('div .oxd-input').eq(1).type('dash805');\ncy.get('div .oxd-select-text').eq(0).type('{downarrow}').click();\ncy.get('input').filter('[placeholder=\"Type for hints...\"]').type('QA');\ncy.wait(2000);\ncy.get('.oxd-autocomplete-text-input').type('{downarrow} {enter}').click();\ncy.get('div .oxd-select-text').eq(1).type('{downarrow}').click();\ncy.get('button[type=\"submit\"]').click();\n//validate the users list recived\ncy.wait(2000);\ncy.get('.oxd-table-cell').eq(1).contains('dash805');\ncy.log('User found');\n//edit username\ncy.get('div .oxd-table-cell').eq(0).click();\ncy.get('button').filter('[type=\"button\"]').eq(7).click();\ncy.get('.oxd-input').eq(1).clear().type('dash8051');\ncy.get('button[type=\"submit\"]').type('{enter}').click();\ncy.wait(2000);\n// //delete user by selecting checkbox\ncy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers');\ncy.get('div .oxd-input').eq(1).type('dash8051');\ncy.wait(2000);\ncy.get('div .oxd-select-text').eq(1).type('{downarrow}').click();\ncy.get('button[type=\"submit\"]').click();\ncy.get('div .oxd-table-cell').eq(0).click();\ncy.get('button').filter('[type=\"button\"]').eq(5).click();\ncy.get('button').filter('[type=\"button\"]').eq(9).click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.oxd-table-cell`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.oxd-table-cell`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/Javascript_2024/2_seach_user.cy.js:21:7)",
+                "diff": null
+              },
+              "uuid": "2f9460d7-377a-4ed6-8221-f4bdf3e6eb4a",
+              "parentUUID": "c2c1124e-98f6-4d92-8903-6285f9a00785",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2f9460d7-377a-4ed6-8221-f4bdf3e6eb4a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 21688,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f05f1958-c8e2-4a0a-843f-0463f1aa86e4",
+      "title": "",
+      "fullFile": "cypress/e2e/Cypress_2024/26_feb/1_basic.cy.js",
+      "file": "cypress/e2e/Cypress_2024/26_feb/1_basic.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Google test",
+          "fullTitle": "Google test",
+          "timedOut": null,
+          "duration": 5363,
+          "state": "passed",
+          "speed": "medium",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('https://google.com');\ncy.get('div .gLFyf').type('Automation step by step{enter}');\n// cy.get('[data-hveid=\"CAwQAA\"] > .LatpMc > .GKS7s').click()\ncy.get('.GKS7s').eq(1);\n// cy.contains('Videos').click()\n// cy.get('div .ExCKkf').click()\n// cy.get('div .gLFyf').type('{downarrow}').click()\ncy.wait(2000);\ncy.log(Cypress.browser);\nclose();",
+          "err": {},
+          "uuid": "647feea0-f7e6-41d3-8a26-73f2c7547226",
+          "parentUUID": "f05f1958-c8e2-4a0a-843f-0463f1aa86e4",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "647feea0-f7e6-41d3-8a26-73f2c7547226"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 5363,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "cfaaabb6-d782-433a-9c57-7871612ca5e4",
+      "title": "",
+      "fullFile": "cypress/e2e/Cypress_2024/26_feb/2_OrangeHRM.cy.js",
+      "file": "cypress/e2e/Cypress_2024/26_feb/2_OrangeHRM.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4f328212-606a-4fc0-930d-f18849a51ccf",
+          "title": "Login to orangeHRM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test login",
+              "fullTitle": "Login to orangeHRM test login",
+              "timedOut": null,
+              "duration": 6461,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');\n// find the element using filter\ncy.get('input').filter('.oxd-input').eq(0).type('Admin');\n//find the element using name\ncy.get('input[name=\"username\"]').clear().type('Admin');\n//enter username\ncy.get('.oxd-input').eq(1).type('admin123');\ncy.get('input[type=\"password\"]').clear().type('admin123');\ncy.get('input').filter('.oxd-input').eq(1).clear().type('admin123');\n//click submit\ncy.get('button').filter('.oxd-button').click();\n// cy.get('button[type=\"submit\"]').click()",
+              "err": {},
+              "uuid": "ff492641-2664-42af-8414-bf8d36775f79",
+              "parentUUID": "4f328212-606a-4fc0-930d-f18849a51ccf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ff492641-2664-42af-8414-bf8d36775f79"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6461,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "760354ba-417b-4e85-9a82-ff218b88fbf1",
+      "title": "",
+      "fullFile": "cypress/e2e/Cypress_2024/28thFeb/1_googlesearch.cy.js",
+      "file": "cypress/e2e/Cypress_2024/28thFeb/1_googlesearch.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Google test",
+          "fullTitle": "Google test",
+          "timedOut": null,
+          "duration": 9283,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('https://google.com');\ncy.get('div .gLFyf').type('Automation step by step{enter}');\ncy.get('.GKS7s').eq(1);\ncy.log(Cypress.browser);",
+          "err": {
+            "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.GKS7s`, but never found it.",
+            "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.GKS7s`, but never found it.\n    at Context.eval (webpack://dn_cypress/./cypress/e2e/Cypress_2024/28thFeb/1_googlesearch.cy.js:6:7)",
+            "diff": null
+          },
+          "uuid": "178b6306-3942-4bb2-a5ed-127525cc437b",
+          "parentUUID": "760354ba-417b-4e85-9a82-ff218b88fbf1",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Google test",
+          "fullTitle": "Google test",
+          "timedOut": null,
+          "duration": 3065,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('https://google.com');\ncy.get('[name=\"q\"]').type('Automation step by step{enter}');\n// cy.log(Cypress.browser)",
+          "err": {},
+          "uuid": "dfa95349-cbd7-4671-a938-d748e38f7a8d",
+          "parentUUID": "760354ba-417b-4e85-9a82-ff218b88fbf1",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "dfa95349-cbd7-4671-a938-d748e38f7a8d"
+      ],
+      "failures": [
+        "178b6306-3942-4bb2-a5ed-127525cc437b"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 12348,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f442019a-393c-404e-b6a0-cb7c0ab267b6",
+      "title": "",
+      "fullFile": "cypress/e2e/Cypress_2024/28thFeb/1_orangHRMlogi.cy.js",
+      "file": "cypress/e2e/Cypress_2024/28thFeb/1_orangHRMlogi.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "da1fd7a6-b394-4f1a-a31c-3fdbcff65bd2",
+          "title": "Login to orangeHRM",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "test login",
+              "fullTitle": "Login to orangeHRM test login",
+              "timedOut": null,
+              "duration": 9178,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');\n// find the element using filter\ncy.get('input').filter('.oxd-input').eq(0).type('Admin');\n//find the element using name\ncy.get('input[name=\"username\"]').clear().type('Admin');\n//enter username\ncy.get('.oxd-input').eq(1).type('admin123');\ncy.get('input[type=\"password\"]').clear().type('admin123');\ncy.get('input').filter('.oxd-input').eq(1).clear().type('admin123');\n//click submit\ncy.get('button').filter('.oxd-button').click();\n// cy.get('button[type=\"submit\"]').click()",
+              "err": {},
+              "uuid": "7068fc0c-f773-4a22-8e9c-d062c6fca7e5",
+              "parentUUID": "da1fd7a6-b394-4f1a-a31c-3fdbcff65bd2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7068fc0c-f773-4a22-8e9c-d062c6fca7e5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9178,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "b7551208-ef2f-4428-82a2-f538dd1b9317",
+      "title": "",
+      "fullFile": "cypress/e2e/Javascript_2024/27thFeb/writecsv.cy.js",
+      "file": "cypress/e2e/Javascript_2024/27thFeb/writecsv.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "afc754a2-a927-4013-868d-a93693d33c17",
+          "title": "Write CS",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Write file",
+              "fullTitle": "Write CS Write file",
+              "timedOut": null,
+              "duration": 71,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.writeFile('cypress/fixtures/data.csv', 'Helloworld');\ncy.readFile('cypress/fixtures/data.csv').then(text => {\n  expect(text).to.equal('Helloworld');\n});",
+              "err": {},
+              "uuid": "84e28532-2d3d-4364-b334-3e3606148274",
+              "parentUUID": "afc754a2-a927-4013-868d-a93693d33c17",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "84e28532-2d3d-4364-b334-3e3606148274"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 71,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

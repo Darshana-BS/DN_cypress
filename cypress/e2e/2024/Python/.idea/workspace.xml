@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="79ba05b1-bc28-40cb-b5e5-e559da493a7d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13_1Loops/1_for.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13_1Loops/2_for.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13_1Loops/3_for.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13_1Loops/4_foreach.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13_1Loops/5_forof.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13_1Loops/6_forin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13_1Loops/7_while.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13_1Loops/8_dowhile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/1_if_temp_prints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/2_html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/2_switch_grades.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/3_if_age_minor_major.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/4_if_leapyear.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/5_if_check_positive_negative.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/For/1_for.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/For/2_foreach.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Practice/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/13thFeb/Study/1_operators.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/15th Feb/1hoisting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/15th Feb/2_datatype.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/15th Feb/3_nonprimitive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/15th Feb/4_array.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/15th Feb/5_fuctions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/16thFeb/codeacademy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/17thFeb/Project2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/19thFeb/magic8-ball.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/19thFeb/race.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/1_writeJScode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/21stFeb/1arrays.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/21stFeb/2methods.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/21stFeb/3loops.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/23rdFeb/1_OOPclass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/23rdFeb/2_encapsulation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/23rdFeb/3_inheritance.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/23rdFeb/3a_prototype.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/23rdFeb/4_polymorphisma.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/23rdFeb/5_abstraction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/24thFeb/1_educativeassignments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/27thFeb/writecsv.cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/2_Script.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/2_seach_user.cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/3_script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/4_1largest_one.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/4_2sign_of_numbers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/4_if-else.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/API" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/APIAutomation/test/1_GET.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/APIAutomation/test/converter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/APIAutomation/test/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/APIAutomation/test/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/1_orangehrms.cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/1_basic.cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/2_OrangeHRM.cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/cypress.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/cypress/e2e/1implicite_assertions.cy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/cypress/e2e/2expilicite.cy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/cypress/e2e/spec.cy.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/cypress/fixtures/example.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/cypress/support/commands.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/cypress/support/e2e.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javascript_2024/Cypress/26_feb/CypressTypeScript/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python and Selenium/1pythonProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python and Selenium/1pythonProject/.idea/1pythonProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python and Selenium/1pythonProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python and Selenium/1pythonProject/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python and Selenium/1pythonProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python and Selenium/1pythonProject/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python and Selenium/1pythonProject/22_1_first.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python and Selenium/1pythonProject/23_feb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flipcart.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshot-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../fixtures/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../../../fixtures/data.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../screenshots/13th dec 2023/1_locators_get.cy.js/GET Method -- EqulaFirstLast Method (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../screenshots/13th dec 2023/1_locators_get.cy.js/GET Method -- Filter Method (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../screenshots/13th dec 2023/1_locators_get.cy.js/GET Method -- Find Method (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../screenshots/13th dec 2023/1_locators_get.cy.js/GET Method -- Get selectors by class (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../screenshots/13th dec 2023/1_locators_get.cy.js/GET Method -- Parent Method (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../screenshots/13th dec 2023/2_rough.cy.js/Get locators by Name -- Get locators by Name (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../screenshots/15th Dec 2023/3_button.cy.js/login using username and Password -- youtube search (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../screenshots/15th Dec 2023/4_XPATH.cy.js/XPATH -- xpath new (failed).png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2d5ITIXQSdaf9uZHj7I1mSxaPtL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.hello.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "DN__cypress",
+    "last_opened_file_path": "/Users/darsh/Desktop/DN_cypress/DN_cypress/cypress/e2e/2024/Python"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Python and Selenium/1pythonProject" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="79ba05b1-bc28-40cb-b5e5-e559da493a7d" name="Changes" comment="" />
+      <created>1709291519627</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709291519627</updated>
+    </task>
+    <servers />
+  </component>
+</project>
