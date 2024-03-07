@@ -14,7 +14,8 @@ describe('product listing in csv file', ()=> {
     {
         cy.visit('https://www.flipkart.com/account/login?ret=/')
         cy.get('.IiD88i').type('7454339242')
-    })
+        // https://www.freereceivesms.com/en/in/457694.html
+        
     it('find elements', () =>{
        cy.wrap(products).each((productName) => {
         cy.visit("https://www.flipkart.com/");
@@ -48,4 +49,5 @@ describe('product listing in csv file', ()=> {
               });
             });
           });
-        });
+        })
+    })
