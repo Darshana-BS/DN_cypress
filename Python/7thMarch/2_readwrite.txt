@@ -1,0 +1,7 @@
+7 living 1006
+5 living
+4 happy
+3 mouse
+2 cat
+1
+0 my name is DN
