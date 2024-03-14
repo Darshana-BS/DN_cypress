@@ -15,5 +15,3 @@ driver.find_element(By.XPATH, "//form/div[1]/input").send_keys('demo@gmail.com')
 # driver.find_element(By.XPATH, "//button[text()='Save New Password']").click()
 
 time.sleep(2)
-
-# new
