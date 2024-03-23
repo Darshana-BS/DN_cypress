@@ -4,6 +4,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 
 driver = webdriver.Chrome()
 
@@ -17,4 +18,13 @@ password.send_keys(Keys.RETURN)
 
 # sumbit
 driver.find_element(By.ID, "login-btn").click()
-time.sleep(4)
+
+# apply filter
+driver.find_element(By.CSS_SELECTOR,"input[value='Apple']")
+
+
+# drop-down filtering
+# driver.find_element(By.CLASS_NAME, "sort")
+# dropdown = Select(driver.find_element(By.CLASS_NAME, "sort"))
+# dropdown.select_by_value('lowestprice')
+# time.sleep(4)
