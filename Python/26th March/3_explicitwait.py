@@ -2,7 +2,9 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
 
 driver = webdriver.Chrome()
 driver.get('https://rahulshettyacademy.com/seleniumPractise/#/')
@@ -32,6 +34,10 @@ print(driver.current_url)
 # apply promocode
 driver.find_element(By.CSS_SELECTOR, "input[placeholder='Enter promo code']").send_keys('rahulshettyacademy')
 driver.find_element(By.CLASS_NAME, "promoBtn").click()
+
+# explicit wait
+wait = WebDriverWait(driver, 10)
+wait.until(expected_conditions.presence_of_element_located ((By.CLASS_NAME, "promoInfo")))
 assert driver.find_element(By.CLASS_NAME, "promoInfo").text == 'Code applied ..!'
 
 time.sleep(4)
