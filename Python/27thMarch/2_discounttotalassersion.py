@@ -42,11 +42,11 @@ print(amount.text)
 # assert driver.find_element(By.CSS_SELECTOR, "span[class='promoInfo']").text == "Code applied ..!"
 
 # total amount without discount
-total_no_discount = driver.find_element(By.CSS_SELECTOR, ".totAmt").text #""
+total_no_discount = float(driver.find_element(By.CSS_SELECTOR, ".totAmt").text) #""
 print ('Amount total: ', total_no_discount)
 
 # discount total
-after_discount = driver.find_element(By.CSS_SELECTOR, "span[class='discountAmt']").text
+after_discount = float(driver.find_element(By.CSS_SELECTOR, "span[class='discountAmt']").text)
 print("Amount discount added is: ", after_discount)
 
 # total with discount < total without discount
