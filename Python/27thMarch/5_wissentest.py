@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 # try:
 #     x  =  sum / 0
-#     print('')
+#     print(x)
 # except Exception as e:
 #     print(e)
 
