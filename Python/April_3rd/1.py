@@ -17,3 +17,9 @@ def primeNum(number):
     
     
 print(primeNum(37))
+
+
+# select p.name as patient_name d.name as doctor_name
+# from patient p 
+# inner join doctor d on p.doctor_id = d.id
+# where d.name = 'XYZ'
