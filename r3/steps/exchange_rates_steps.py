@@ -13,12 +13,14 @@ def retrieve_exchange_rates(context):
 
 @then('the response status code should be {status_code}')
 def verify_response_status_code(context, status_code):
-    assert context.response.status_code == int(status_code)
+    assert context.response is not None, "No response object found in context"
+    assert context.response.status_code == int(status_code), f"Expected status code: {status_code}, Actual status code: {context.response.status_code}"
 
 @then('the response should contain rates for the following currencies:')
 def verify_rates_for_currencies(context):
+    assert context.response is not None, "No response object found in context"
     response_data = context.response.json()
     currencies = [row['currency_code'] for row in context.table]
 
     for currency in currencies:
-        assert currency in response_data['rates']
+        assert currency in response_data['rates'], f"Currency '{currency}' not found in response rates"
