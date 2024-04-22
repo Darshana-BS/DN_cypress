@@ -14,3 +14,4 @@ project-root
 3. api_utils.py: Utility file to make API requests.
 4. README.md: Documentation explaining the project setup and usage.
 5. requirements.txt: File containing dependencies.
+6. run the file using behave by going to the directory of util
