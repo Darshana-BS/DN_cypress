@@ -20,12 +20,17 @@ test('TC_01 Browser Context Playwright Test1', async ({browser})=>        // asy
         console.log (await page.title());
         await expect(page).toHaveTitle("LoginPage Practise | Rahul Shetty Academy");
 
-        //Locators = CSS, XPATH 
+        //Locators = CSS, XPATH with incorrect password 
         await page.locator('#username').fill('rahulshettyacade');
         await page.locator('#password').fill('learning');
         await page.locator('#signInBtn').click();
         console.log (await page.locator("[style*='block']").textContent());             //wait for this element to find 
         
+        //incorrect password validation message
+        await page.locator('#username').fill('rahulshettyacademy');
+        await page.locator('#password').fill('learning');
+        await page.locator('#signInBtn').click();
+        await expect(page).toHaveTitle("ProtoCommerce");    
         stopTrace();
 });
 
