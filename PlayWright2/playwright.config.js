@@ -13,15 +13,21 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 
-const config = ({
+module.exports = defineConfig({
   testDir: './tests',
-  reporter: 'html',
-  timeout: 40000,
+  retries: 1,
+  reporter: [['list'], ['html']],  // nice HTML report
+  timeout: 40 * 100, //timeout for tests 
   expect: {
-    timeout: 4000
+    timeout: 5000 //time for assertions 
   },
+  
   use: {
-     browserName: 'chromium'
+    headless: true,
+     browserName: 'chromium',
+     video: 'on',
+     screenshot: 'on',
+     trace: 'on'
   }
 
 // export default defineConfig({
