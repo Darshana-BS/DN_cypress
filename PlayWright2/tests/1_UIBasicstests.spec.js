@@ -42,11 +42,11 @@ test('TC_01 Browser Context Playwright Test1', async ({browser})=>        // asy
 
         //get name of first product 
         console.log (await cardTitle.nth(0).textContent());        //).first()
-        await expect (cardTitle.nth(0)).toContainText('iphone X');    //assersion to get the title check / validation 
+        await expect (cardTitle.first()).toContainText('iphone X');    //assersion to get the title check / validation 
         await expect (cardTitle.nth(1)).toContainText('Samsung Note 8');
 
         //get title of all products titles 
-        const allTitles = await cardTitle.allTextContents();
+        const allTitles = await cardTitle.allTextContents();      //returns array, can not wait automatically 
         console.log (allTitles); 
 
         stopTrace();
