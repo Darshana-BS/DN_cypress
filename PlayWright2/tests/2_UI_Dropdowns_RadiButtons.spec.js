@@ -12,6 +12,7 @@ test('TC_01 Dropdown', async({page}) =>
         // const radioButton = page.locator("input[value='user']")
         const radioButton = page.locator(".radiotextsty")
         const clickOkay = page.locator("button#okayBtn")
+        const checkBox = page.locator("#terms")
 
         //steps 
         await page.goto(url);
@@ -28,6 +29,12 @@ test('TC_01 Dropdown', async({page}) =>
         //METHOD 1 = verify of the button is successfully selected or not 
         console.log ((await radioButton.last()).isChecked())
         await expect(radioButton.last()).toBeChecked();
-        
+
+        //chekbox
+        await checkBox.click()
+        await expect (checkBox).toBeChecked();
+        await checkBox.uncheck();
+        // await expect (checkBox.isChecked()).toBeFalsy();
+        expect ((await checkBox).isChecked()).toBeFalsy();
         await signIn.click();
 })
