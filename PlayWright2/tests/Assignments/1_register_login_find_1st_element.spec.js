@@ -68,12 +68,21 @@ test('TC_02 Login to existing account and get list of products', async({browser}
     await userEmail.fill("1drahulshettyacademy@playwright.com");
     await userPassword.fill("Dash805Dash805");
     await login.click();
-    //get the list of the products 
-    console.log (await productname.nth(1).textContent());
-    await expect(productname.nth(1)).toContainText("ADIDAS ORIGINAL");
+    
+    //api based / service based architecture = waits until all the calls are made  
+    // await page.waitForLoadState('networkidle');
+
+    //OR use -> 
+
+    //get the single products 
+    // console.log (await productname.nth(1).textContent());
+    // await expect(productname.nth(1)).toContainText("ADIDAS ORIGINAL");
+
     //get list or array of all products on page 1
+    await page.locator(".card-body h5").first().waitFor();
     const allproducts = await productname.allTextContents();
     console.log (allproducts);
+    
 })
     //Register using existing details
     //password validation Please enter 1 Special Character, 1 Capital 1, Numeric 1 Small 
