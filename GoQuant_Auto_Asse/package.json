@@ -1,0 +1,27 @@
+{
+  "name": "goquant_auto_asse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "test:all": "npx playwright test --reporter=html",
+  "test:chrome": "npx playwright test --project=chromium --reporter=html --output=chrome_results",
+  "test:firefox": "npx playwright test --project=firefox --reporter=html --output=firefox_results",
+  "test:safari": "npx playwright test --project=webkit --reporter=html --output=webkit_results",
+  "testreports": "npx playwright test --reporter=json,html && node GQ_Assessment_Report/generateReport.js",
+  "test:report": "npx playwright test --reporter=json,html --output=playwright-report > /Users/darsh_cf/Desktop/DN_cypress/GoQuant_Auto_Asse/test-results/results.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.7.2"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.2",
+    "markdown-pdf": "^11.0.0",
+    "playwright": "^1.56.1"
+  }
+}
