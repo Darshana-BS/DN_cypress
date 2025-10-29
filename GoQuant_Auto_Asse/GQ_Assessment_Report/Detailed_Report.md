@@ -12,9 +12,32 @@ Each module includes validation for login, account management, order execution, 
 
 ## 🎥 Test Execution Evidence
 
+## 🎥 Test Execution Evidence for Structured cases trace
+| #  | Test Case | Trace File | GitHub Link |
+|--- |------------|-------------|-------------|
+| 01 | Login with Invalid Credentials     | TC01_LoginInvalid_Creds.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC01_LoginInvalid_Creds.zip) |
+| 02 | Login with Valid Credentials       | TC02_LoginValid_Creds.zip   | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC02_LoginValid_Creds.zip) |
+| 03 | Add OKX Account                    | TC03_Add_Account_OKX.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC03_Add_Account_OKX.zip) |
+| 04 | Add Binance USDM Account           | TC04_Add_Account_Binance_COINM.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC04_Add_Account_Binance_COINM.zip) |
+| 04 | Add Binance COINM Account          | TC04_Add_Account_Binance_USDM.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC04_Add_Account_Binance_USDM.zip) |
+| 05 | Modify Account with invalid details| TC05_Modify_Account_ivalid_details.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC05_Modify_Account_ivalid_details.zip) |
+| 06 | Place Order Binance COINM          | TC06_Place_Binance_COINM_Order.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC06_Place_Binance_COINM_Order.zip) |
+| 06 | Place Order Binance USDM           | TC06_Place_Binance_USDM_Order.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC06_Place_Binance_USDM_Order.zip) |
+| 06 | Place Order OKX                    | TC06_Place_OKX_Market_Order.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC06_Place_OKX_Market_Order.zip) |
+| 08 | Order Emptyr values Validation     | TC08_order_place_validation_errors.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC08_order_place_validation_errors.zip) |
+| 09 | Validate Metrics.                  | TC09_validate_metrics.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC09_validate_metrics.zip) |
+| 11 | Cancel All Working Orders          | TC11_cancelall_workingorders.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC11_cancelall_workingorders.zip) |
+| 12 | Kill Edge                          | TC12_kill-edge.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC12_kill-edge.zip) |
+| 13 | Liquidate Positions                | TC13_Liquidate_Positions.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC13_Liquidate_Positions.zip) |
+| 14 | Switch to smart ordering           | TC14_Smart_order_routing.zip | [View Trace]https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC14_Smart_order_routing.zip) |
+| 17 | Add account using invalid details  | TC17_Add_Invalid_Account.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC17_Add_Invalid_Account.zip) |
+| 20 | Logout user                        | TC20_Logout.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC20_Logout.zip) |
+| 21 | Modify Account using valid details | TC21_Modify_Account_valid_details.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC21_Modify_Account_valid_details.zip) |
+| 22 | Login fields validations           | TC22_Login_with_black_email_password.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/Restructured_cases/TC22_Login_with_black_email_password.zip) |
+
+## 🎥 Test Execution Evidence for non structured cases (Old)
 Each test case has its own individual **Playwright trace recording** uploaded to GitHub.  
 These traces include full steps, network logs, screenshots, and console logs for debugging.
-
 | # | Test Case | Trace File | GitHub Link |
 |---|------------|-------------|-------------|
 | 01 | Login with Invalid Credentials | TC01_LoginInvalid_Creds.zip | [View Trace](https://github.com/Darshana-BS/GQ_Assessment/blob/GQ_Assessment/tests/trace/TC01_LoginInvalid_Creds.zip) |
@@ -37,15 +60,15 @@ These traces include full steps, network logs, screenshots, and console logs for
 > 🧩 **Note:** All traces are downloadable ZIPs and can be replayed using Playwright Trace Viewer.
 
 
-| e75ed9bcf84a5621bfa8af58e4358050 | ./restructured |
-| 9342d6d6aac131bd2ca8a73fb7d71c0e | ./restructured |
-| bd5935dedcdb562370b6f4c626544acf | ./restructured |
-| d9b638631ca117335a2b8fe0d751ce1b | ./restructured |
-| dfc8aed0ed9e689d3278bdcbccdd1efa | ./restructured |
-| 2c2678bebcfa989f47f2ac2f0c5dba49 | ./restructured |
 | c6e1d98156c7027fd8c3dbea26dcb53d | ./dummy.txt |
+| 9f2470257011ce3b5745fd19f49e33aa | ./copyReport.js |
 | 64e2ced2ec895a004811c26bc47a562a | ./node_modules/pend/test.js |
 | e8a22696b017d8f536112ef54c81f3fa | ./node_modules/pend/LICENSE |
 | 51cdd3c93701ca33381fabda25149a99 | ./node_modules/pend/index.js |
+| 31d97fae076b15c5e0184a34c8f7bb92 | ./node_modules/pend/README.md |
+| 503df774d70b97d03d0af0480c5d414a | ./node_modules/pend/package.json |
+| 5bbc2685b76c055f7adef651da1241ca | ./node_modules/fd-slicer/LICENSE |
+| f3262df8199e2e4d785c34e42885c4bd | ./node_modules/fd-slicer/test/test.js |
+| e0d96855a73b839796aa8081d81b4658 | ./node_modules/fd-slicer/CHANGELOG.md |
 
 Generated by Darshana Nehulkar | QA Automation

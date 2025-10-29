@@ -39,16 +39,16 @@ test('Login with valid user credentials', async ({ browser }) => {
 });
 
 //-----------------------------TC_03_Add_Account_using_valid_details_[Passed]--------------------------------
-test('Add account for first time after login', async ({ browser }) => {
+test('Add account for all Symbols', async ({ browser }) => {
   const context = await browser.newContext();
   const stopTrace = await startTracing(context, 'TC03_Add Account');
   const page = await context.newPage();
   const gqMain = new GoQuantMain(page);
   // Get started and add first account (first time visit after login) 
-  await gqMain.login();
+  await gqMain.login('user14@goquant.io', '60Re3G9KvvFl4Ihegxpi');
   await gqMain.addAccountOKX();
-  // await gqMain.addAccountBianceUSDM();
-  // await gqMain.addAccountBianceCOINM();
+  await gqMain.addAccountBianceUSDM();
+  await gqMain.addAccountBianceCOINM();
   await stopTrace();
 });
 
@@ -94,18 +94,18 @@ test('Place OKX Market Order', async ({browser})=> {
 })
 
 //-----------------------------TC_07_Get_Order_details_[WIP]--------------------------------
-// test('Get Order details', async ({browser})=> {
-//   const context = await browser.newContext();
-//   const stopTrace = await startTracing(context, 'TC07_Get_order datails');
-//   const page = await context.newPage();
-//   const gqMain = new GoQuantMain(page);
-//   //Validate Order Details 
-//   await gqMain.login();
-//   await gqMain.getOrderdetails();
-//   await stopTrace();
-// })
+test.only('Get Order details', async ({browser})=> {
+  const context = await browser.newContext();
+  const stopTrace = await startTracing(context, 'TC07_Get_order datails');
+  const page = await context.newPage();
+  const gqMain = new GoQuantMain(page);
+  //Validate Order Details 
+  await gqMain.login('user14@goquant.io', '60Re3G9KvvFl4Ihegxpi');
+  await gqMain.getOrderdetails();
+  await stopTrace();
+})
 
-//-----------------------------TC08_validation_errors_with_empty_details_[Passed]--------------------------------
+//-----------------------------TC08_Place_order_validation_errors_with_empty_details_[Passed]--------------------------------
 test('Place Order with mandatory details empty', async ({browser})=> {
   const context = await browser.newContext();
   const stopTrace = await startTracing(context, 'TC08_validation_errors');
@@ -213,6 +213,18 @@ test('Place a short / sell order', async({browser})=>{
   await stopTrace();
 })
 
+//----------------------TC17_Add_Invalid_Account_[Pass]---------------------------------------
+test('Add account with invalid details', async ({ browser }) => {
+  const context = await browser.newContext();
+  const stopTrace = await startTracing(context, 'TC17_Add_Invalid_Account');
+  const page = await context.newPage();
+  const gqMain = new GoQuantMain(page);
+  // Add invalid account 
+  await gqMain.login('user14@goquant.io', '60Re3G9KvvFl4Ihegxpi');
+  await gqMain.addInvalidAccountOKX();
+  await stopTrace();
+});
+
 //-----------------------------TC_19_Validate_Accounts_Status_[WIP]--------------------------------
 // test('Log out of account', async ({browser})=> {
 //   const context = await browser.newContext();
@@ -227,7 +239,7 @@ test('Place a short / sell order', async({browser})=>{
 // })
 
 //-----------------------------TC_20_Logout_User_[Passed]--------------------------------
-test.only('Log out of account', async ({browser})=> {
+test('Log out of account', async ({browser})=> {
   const context = await browser.newContext();
   const stopTrace = await startTracing(context, 'TC20_Logout');
   const page = await context.newPage();
@@ -237,8 +249,6 @@ test.only('Log out of account', async ({browser})=> {
   await gqMain.logout();
   await stopTrace();
 })
-
-//-------------------------------------------------------------
 
 //-----------------------------TC21__Modify_Account_with_valid_details[WIP]--------------------------------
 test('Modify Account with Valid details', async ({browser})=> {
@@ -253,7 +263,18 @@ test('Modify Account with Valid details', async ({browser})=> {
   await stopTrace();
 })
 
-//-----------------------------TC22[Edge_case]_Handle_Something_went_wrong[Passed, Has_Bug]--------------------------------
+//----------------------TC22_Login_with_blank_email_password[WIP]-------------------------------------------
+test('Sign in with blank email, password', async ({ browser }) => {
+  const context = await browser.newContext();
+  const stopTrace = await startTracing(context, 'TC22_Login_with_black_email_password');
+  const page = await context.newPage();
+  const gqMain = new GoQuantMain(page);
+  // Sign in / login with black email / password 
+  await gqMain.loginwithblankEmailPassword('', '');
+  await stopTrace();
+});
+
+//-----------------------------TC23[Edge_case]_Handle_Something_went_wrong[Passed, Has_Bug]--------------------------------
 test('Handel Something Went wrong', async ({ browser }) => {
   const context = await browser.newContext();
   const stopTrace = await startTracing(context, 'TC22_Handle_SomethingWentWrong');
